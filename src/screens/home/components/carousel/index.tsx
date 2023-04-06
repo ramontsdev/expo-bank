@@ -8,6 +8,7 @@ import { RFValue } from 'react-native-responsive-fontsize';
 
 import { theme } from '../../../../theme/theme';
 
+import banner1 from './assets/banner-1.png';
 import {
   CarouselContainer,
   DotWrap,
@@ -15,30 +16,26 @@ import {
 } from './styles';
 
 const device_width = Dimensions.get('window').width;
+console.log(device_width)
+console.log(418 * (device_width / 720))
+console.log(
+  Image.resolveAssetSource(banner1).width,
+  Image.resolveAssetSource(banner1).height
+)
 
 const BANNERS = [
   <Image
-    source={require('./assets/banner-1.png')}
+    source={banner1}
     style={{
-      resizeMode: 'contain',
-      width: device_width,
-      height: device_width,
+      width: device_width
     }}
+    resizeMode='contain'
   />,
   <Image
-    source={require('./assets/banner-2.png')}
+    source={banner1}
     style={{
-      resizeMode: 'contain',
+      // resizeMode: 'contain',
       width: device_width,
-      height: device_width,
-    }}
-  />,
-  <Image
-    source={require('./assets/banner-3.png')}
-    style={{
-      resizeMode: 'contain',
-      width: device_width,
-      height: device_width,
     }}
   />,
 ];
